@@ -1,4 +1,6 @@
-﻿namespace TddPatternMatching
+﻿using System;
+
+namespace TddPatternMatching
 {
     public class PatternMatcher
     {
@@ -6,6 +8,8 @@
 
         public PatternMatcher(string text)
         {
+            if (text == null) throw new ArgumentNullException("text");
+
             this.text = text;
         }
 

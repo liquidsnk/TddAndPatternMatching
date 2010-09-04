@@ -1,4 +1,6 @@
-﻿using NUnit.Framework;
+﻿using System;
+
+using NUnit.Framework;
 
 namespace TddPatternMatching.Tests
 {
@@ -21,6 +23,12 @@ namespace TddPatternMatching.Tests
         {
             var sut = new PatternMatcher("abra kadabra");
             Assert.AreEqual(expectedCount, sut.GetCount(subString));
+        }
+
+        [Test]
+        public void Constructor_WhenGivenNullText_ThrowsArgumentNullException()
+        {
+            Assert.Throws<ArgumentNullException>(() => new PatternMatcher(null));
         }
     }
 }
