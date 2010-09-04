@@ -10,7 +10,7 @@ namespace TddPatternMatching
 
         public int GetCount(string subString)
         {
-            throw new NotImplementedException();
+            return 0;
         }
     }
 }
