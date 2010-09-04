@@ -11,5 +11,12 @@ namespace TddPatternMatching.Tests
             var sut = new PatternMatcher("abra kadabra");
             Assert.AreEqual(0, sut.GetCount("z"));
         }
+
+        [Test]
+        public void GetCount_WhenSubstringIsPresent_ReturnsCount()
+        {
+            var sut = new PatternMatcher("abra kadabra");
+            Assert.AreEqual(5, sut.GetCount("a"));
+        }
     }
 }
