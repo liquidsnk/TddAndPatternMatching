@@ -30,5 +30,12 @@ namespace TddPatternMatching.Tests
         {
             Assert.Throws<ArgumentNullException>(() => new PatternMatcher(null));
         }
+
+        [Test]
+        public void GetCount_WhenGivenSubstringLongerThanText_ReturnsZero()
+        {
+            var sut = new PatternMatcher("abra kadabra");
+            Assert.AreEqual(0, sut.GetCount("abra kadabra kabra"));
+        }
     }
 }
