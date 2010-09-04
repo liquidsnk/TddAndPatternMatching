@@ -12,13 +12,16 @@
         public int GetCount(string subString)
         {
             int count = 0;
-            foreach (var character in text)
-            {
-                if (character.ToString().Equals(subString))
+            int position = 0;
+            while ((position + subString.Length) <= text.Length)
+	        {
+	            if (text.Substring(position, subString.Length).Equals(subString))
                 {
                     count++;
                 }
-            }
+
+                position++;
+	        }
 
             return count;
         }
