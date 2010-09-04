@@ -13,10 +13,14 @@ namespace TddPatternMatching.Tests
         }
 
         [Test]
-        public void GetCount_WhenSubstringIsPresent_ReturnsCount()
+        [TestCase("a", 5)]
+        [TestCase("ab", 2)]
+        [TestCase("ra", 2)]
+        [TestCase("abra", 2)]
+        public void GetCount_WhenSubstringIsPresent_ReturnsCount(string subString, int expectedCount)
         {
             var sut = new PatternMatcher("abra kadabra");
-            Assert.AreEqual(5, sut.GetCount("a"));
+            Assert.AreEqual(expectedCount, sut.GetCount(subString));
         }
     }
 }
