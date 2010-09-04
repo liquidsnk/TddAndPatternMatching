@@ -15,6 +15,8 @@ namespace TddPatternMatching
 
         public int GetCount(string subString)
         {
+            if (subString == null) throw new ArgumentNullException("subString");
+
             int count = 0;
             int position = 0;
             while ((position + subString.Length) <= text.Length)

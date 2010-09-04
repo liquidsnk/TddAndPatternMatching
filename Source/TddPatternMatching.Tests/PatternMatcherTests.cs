@@ -37,5 +37,12 @@ namespace TddPatternMatching.Tests
             var sut = new PatternMatcher("abra kadabra");
             Assert.AreEqual(0, sut.GetCount("abra kadabra kabra"));
         }
+
+        [Test]
+        public void GetCount_WhenGivenNullSubstring_ThrowsArgumentNullException()
+        {
+            var sut = new PatternMatcher("abra kadabra");
+            Assert.Throws<ArgumentNullException>(() => sut.GetCount(null));
+        }
     }
 }
