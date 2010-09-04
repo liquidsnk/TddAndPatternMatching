@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace TddPatternMatching
 {
@@ -30,6 +31,12 @@ namespace TddPatternMatching
 	        }
 
             return count;
+        }
+
+        public ICollection<int> GetIndexes(string subString)
+        {
+            if (subString == null) throw new ArgumentNullException("subString");
+            throw new NotImplementedException();
         }
     }
 }

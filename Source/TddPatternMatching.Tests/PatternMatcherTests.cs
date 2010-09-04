@@ -44,5 +44,15 @@ namespace TddPatternMatching.Tests
             var sut = new PatternMatcher("abra kadabra");
             Assert.Throws<ArgumentNullException>(() => sut.GetCount(null));
         }
+
+        //I've purposely avoided dealing with the "empty" string here, since I don't know what I should theoretically do with it.
+        //Is the empty string a subString of every string or not?, etc.
+
+        [Test]
+        public void GetIndexes_WhenGivenNullSubstring_ThrowsArgumentNullException()
+        {
+            var sut = new PatternMatcher("abra kadabra");
+            Assert.Throws<ArgumentNullException>(() => sut.GetIndexes(null));
+        }
     }
 }
