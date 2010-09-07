@@ -54,5 +54,12 @@ namespace TddPatternMatching.Tests
             var sut = new PatternMatcher("abra kadabra");
             Assert.Throws<ArgumentNullException>(() => sut.GetIndexes(null));
         }
+
+        [Test]
+        public void GetIndexes_WhenSubstringNotPresent_ReturnsEmptyCollection()
+        {
+            var sut = new PatternMatcher("abra kadabra");
+            Assert.AreEqual(0, sut.GetIndexes("z").Count);
+        }
     }
 }

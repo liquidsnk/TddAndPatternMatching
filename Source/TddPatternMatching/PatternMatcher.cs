@@ -36,6 +36,7 @@ namespace TddPatternMatching
         public ICollection<int> GetIndexes(string subString)
         {
             if (subString == null) throw new ArgumentNullException("subString");
+            if (GetCount(subString) == 0) return new int[0];
             throw new NotImplementedException();
         }
     }
